@@ -25,3 +25,9 @@ replay_pid*
 /build/
 /.gradle/
 /.idea/
+/common/.gradle/
+/common/build/
+/fabric/.gradle/
+/fabric/build/
+/forge/build/
+/forge/.gradle/
