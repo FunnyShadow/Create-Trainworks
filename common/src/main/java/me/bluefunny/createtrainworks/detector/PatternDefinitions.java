@@ -10,7 +10,7 @@ public class PatternDefinitions {
         return BlockPatternBuilder.start()
                 .aisle(
                         "...",
-                        "CCS",
+                        "BBS",
                         "..."
                 )
                 .aisle(
@@ -20,7 +20,7 @@ public class PatternDefinitions {
                 )
                 .where('.', blockInWorld -> blockInWorld.getState().isAir())
                 .where('A', blockInWorld -> isAnalogLever(blockInWorld.getState()))
-                .where('C', blockInWorld -> isBrassCasing(blockInWorld.getState()))
+                .where('B', blockInWorld -> isBrassCasing(blockInWorld.getState()))
                 .where('L', blockInWorld -> isLever(blockInWorld.getState()))
                 .where('S', blockInWorld -> isStressometer(blockInWorld.getState()))
                 .build();

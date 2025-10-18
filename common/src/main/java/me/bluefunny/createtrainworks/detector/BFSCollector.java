@@ -56,10 +56,10 @@ public class BFSCollector {
         return blockState -> {
             String blockId = blockState.getBlock().getDescriptionId();
 
-            return blockId.contains("lever") ||
+            return blockId.contains("analog_lever") ||
                     blockId.contains("brass_casing") ||
+                    blockId.contains("lever") ||
                     blockId.contains("stressometer") ||
-                    blockId.contains("analog_lever") ||
                     blockState.isAir();
         };
     }
