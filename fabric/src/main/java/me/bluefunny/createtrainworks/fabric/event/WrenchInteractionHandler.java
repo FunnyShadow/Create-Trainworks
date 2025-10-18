@@ -32,17 +32,17 @@ public class WrenchInteractionHandler {
 
         SmartStructureDetector.DetectionResult result = SmartStructureDetector.detectStructure(level, clickedPos);
 
-        if (result.found) {
+        if (result.found()) {
             player.displayClientMessage(
-                Component.literal(result.message)
-                    .withStyle(ChatFormatting.GREEN),
-                false
+                    Component.literal(result.message())
+                            .withStyle(ChatFormatting.GREEN),
+                    false
             );
         } else {
             player.displayClientMessage(
-                Component.literal(result.message)
-                    .withStyle(ChatFormatting.RED),
-                false
+                    Component.literal(result.message())
+                            .withStyle(ChatFormatting.RED),
+                    false
             );
         }
 

@@ -41,4 +41,5 @@ public class PatternDefinitions {
 
     private static boolean isStressometer(BlockState state) {
         return state.getBlock().getDescriptionId().contains("stressometer");
-    }}
+    }
+}

@@ -42,28 +42,15 @@ public class SmartStructureDetector {
         return DetectionResult.failure("Structure incomplete or incorrect");
     }
 
-    public static class DetectionResult {
-        public final boolean found;
-        public final BlockPos origin;
-        public final Direction forwards;
-        public final Direction up;
-        public final String message;
-
-        public DetectionResult(boolean found, BlockPos origin, Direction forwards, Direction up, String message) {
-            this.found = found;
-            this.origin = origin;
-            this.forwards = forwards;
-            this.up = up;
-            this.message = message;
-        }
+    public record DetectionResult(boolean found, BlockPos origin, Direction forwards, Direction up, String message) {
 
         public static DetectionResult success(BlockPos origin, Direction forwards, Direction up) {
-            return new DetectionResult(true, origin, forwards, up,
-                    "Valid structure detected! Orientation: forwards=" + forwards + ", up=" + up);
-        }
+                return new DetectionResult(true, origin, forwards, up,
+                        "Valid structure detected! Orientation: forwards=" + forwards + ", up=" + up);
+            }
 
-        public static DetectionResult failure(String reason) {
-            return new DetectionResult(false, null, null, null, reason);
+            public static DetectionResult failure(String reason) {
+                return new DetectionResult(false, null, null, null, reason);
+            }
         }
-    }
 }
